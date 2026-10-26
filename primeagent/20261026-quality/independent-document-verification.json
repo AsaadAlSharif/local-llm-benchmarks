@@ -1,0 +1,125 @@
+{
+  "checkedAtUtc": "2026-10-26T14:22:20.245931+00:00",
+  "checks": 23,
+  "passed": 23,
+  "failed": [],
+  "details": [
+    {
+      "name": "Document task completed without a turn/observer error",
+      "passed": true
+    },
+    {
+      "name": "Source field invoiceId",
+      "passed": true
+    },
+    {
+      "name": "Source field supplier",
+      "passed": true
+    },
+    {
+      "name": "Source field currency",
+      "passed": true
+    },
+    {
+      "name": "Source field lineTotals",
+      "passed": true
+    },
+    {
+      "name": "Exact amount subtotal",
+      "passed": true
+    },
+    {
+      "name": "Exact amount vat",
+      "passed": true
+    },
+    {
+      "name": "Exact amount total",
+      "passed": true
+    },
+    {
+      "name": "Connected document reader actually completed",
+      "passed": true
+    },
+    {
+      "name": "Connected exact-math tool actually completed",
+      "passed": true
+    },
+    {
+      "name": "Presentation task completed without a turn/observer error",
+      "passed": true
+    },
+    {
+      "name": "Presentation MCP tool actually completed",
+      "passed": true
+    },
+    {
+      "name": "Native artifact registration actually completed",
+      "passed": true
+    },
+    {
+      "name": "Actual browser Download yielded the recorded file",
+      "passed": true
+    },
+    {
+      "name": "Downloaded bytes match the native generated artifact",
+      "passed": true
+    },
+    {
+      "name": "Downloaded OOXML archive is intact",
+      "passed": true
+    },
+    {
+      "name": "Exactly two slides",
+      "passed": true
+    },
+    {
+      "name": "PrimeAgent and Asaad AlSharif attribution",
+      "passed": true
+    },
+    {
+      "name": "Second slide title",
+      "passed": true
+    },
+    {
+      "name": "Arabic supplier preserved in presentation",
+      "passed": true
+    },
+    {
+      "name": "Invoice ID and currency preserved",
+      "passed": true
+    },
+    {
+      "name": "All independently calculated totals appear on slide two",
+      "passed": true
+    },
+    {
+      "name": "Both line totals appear on slide one",
+      "passed": true
+    }
+  ],
+  "invoice": {
+    "invoiceId": "PA-2026-042",
+    "supplier": "مؤسسة المنارة",
+    "currency": "AED",
+    "lineTotals": [
+      373.5,
+      160.0
+    ],
+    "subtotal": 533.5,
+    "vat": 26.68,
+    "total": 560.18
+  },
+  "download": {
+    "filename": "primeagent-quality-20261026-141836.pptx",
+    "bytes": 29559,
+    "sha256": "bc60cb3b89215e6ebdadf15d15bb5eb81aaeab0ce1b662aac51b7a0224121ffe"
+  },
+  "slideText": [
+    "PrimeAgent — Asaad AlSharif\nInvoice ID: PA-2026-042\nSupplier: مؤسسة المنارة\nLine total 1: 373.5\nLine total 2: 160.0",
+    "Verified totals\nSubtotal: 533.5\nVAT: 26.68\nTotal: 560.18\nCurrency: AED"
+  ],
+  "sessionUrls": {
+    "documents": "https://aipc/session/d8a82376-ebb1-43e6-8ab1-2ac2163afd62",
+    "presentation": "https://aipc/session/93674f47-262f-47be-bddf-2ad722f39a03"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "invoiceId": "PA-2026-042",
+  "supplier": "مؤسسة المنارة",
+  "currency": "AED",
+  "lineTotals": [
+    373.5,
+    160.0
+  ],
+  "subtotal": 533.5,
+  "vat": 26.68,
+  "total": 560.18
+}

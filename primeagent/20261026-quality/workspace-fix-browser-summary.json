@@ -1,0 +1,346 @@
+{
+  "phase": "workspace-fix",
+  "startedAtUtc": "2026-10-26T14:13:16.259Z",
+  "finishedAtUtc": "2026-10-26T14:15:03.411Z",
+  "model": {
+    "id": "qwen3.8-flash-next-coder-iq1_m",
+    "object": "model",
+    "status": {
+      "value": "loaded"
+    },
+    "meta": {
+      "n_ctx": 131072
+    },
+    "architecture": {
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "output_modalities": [
+        "text"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "task": "documents",
+      "sessionUrl": "https://aipc/session/527ab078-69f7-4aec-b872-6248d572a3ef",
+      "completed": true,
+      "blocked": null,
+      "hasTurnError": false,
+      "observerError": null,
+      "errors": [],
+      "download": null,
+      "tools": [
+        {
+          "tool": "tool_search",
+          "status": "in_progress",
+          "title": "ToolSearch: select:mcp__local-workbench__read_document,mcp__local-workbench__read_pdf,mcp__local-workbench__math_compute,mcp__leia-pc__documents_pdf_text"
+        },
+        {
+          "tool": "read_file",
+          "status": "in_progress",
+          "title": "ReadFile: <portal>\\tools\\config.json"
+        },
+        {
+          "tool": "tool_search",
+          "status": "completed",
+          "title": null
+        },
+        {
+          "tool": "read_file",
+          "status": "completed",
+          "title": null
+        },
+        {
+          "tool": "glob",
+          "status": "in_progress",
+          "title": "Glob: 'primeagent-quality-20261026-140221/**/*'"
+        },
+        {
+          "tool": "mcp__local-workbench__read_document",
+          "status": "in_progress",
+          "title": "mcp__local-workbench__read_document"
+        },
+        {
+          "tool": "glob",
+          "status": "completed",
+          "title": null
+        },
+        {
+          "tool": "mcp__local-workbench__read_document",
+          "status": "completed",
+          "title": null
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "in_progress",
+          "title": "mcp__local-workbench__math_compute"
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "in_progress",
+          "title": "mcp__local-workbench__math_compute"
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "in_progress",
+          "title": "mcp__local-workbench__math_compute"
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "in_progress",
+          "title": "mcp__local-workbench__math_compute"
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "in_progress",
+          "title": "mcp__local-workbench__math_compute"
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "in_progress",
+          "title": "mcp__local-workbench__math_compute"
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "failed",
+          "title": null
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "failed",
+          "title": null
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "failed",
+          "title": null
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "failed",
+          "title": null
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "failed",
+          "title": null
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "failed",
+          "title": null
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "in_progress",
+          "title": "mcp__local-workbench__math_compute"
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "in_progress",
+          "title": "mcp__local-workbench__math_compute"
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "in_progress",
+          "title": "mcp__local-workbench__math_compute"
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "in_progress",
+          "title": "mcp__local-workbench__math_compute"
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "in_progress",
+          "title": "mcp__local-workbench__math_compute"
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "in_progress",
+          "title": "mcp__local-workbench__math_compute"
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "completed",
+          "title": null
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "completed",
+          "title": null
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "completed",
+          "title": null
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "completed",
+          "title": null
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "failed",
+          "title": null
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "failed",
+          "title": null
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "in_progress",
+          "title": "mcp__local-workbench__math_compute"
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "in_progress",
+          "title": "mcp__local-workbench__math_compute"
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "in_progress",
+          "title": "mcp__local-workbench__math_compute"
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "completed",
+          "title": null
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "completed",
+          "title": null
+        },
+        {
+          "tool": "mcp__local-workbench__math_compute",
+          "status": "completed",
+          "title": null
+        },
+        {
+          "tool": "write_file",
+          "status": "in_progress",
+          "title": "WriteFile: Writing to primeagent-quality-20261026-140221\\documents\\invoice-result.json"
+        },
+        {
+          "tool": "write_file",
+          "status": "completed",
+          "title": null
+        },
+        {
+          "tool": "read_file",
+          "status": "in_progress",
+          "title": "ReadFile: primeagent-quality-20261026-140221\\documents\\invoice-result.json"
+        },
+        {
+          "tool": "read_file",
+          "status": "completed",
+          "title": null
+        },
+        {
+          "tool": "read_file",
+          "status": "in_progress",
+          "title": "ReadFile: D:\\AI\\...\\qwen-web\\runtime\\memories\\reference\\local-workbench-output-delivery.md"
+        },
+        {
+          "tool": "read_file",
+          "status": "completed",
+          "title": null
+        },
+        {
+          "tool": "edit",
+          "status": "in_progress",
+          "title": "Edit: D:\\AI\\...\\qwen-web\\runtime\\memories\\reference\\local-workbench-output-delivery.md"
+        },
+        {
+          "tool": "edit",
+          "status": "completed",
+          "title": null
+        }
+      ],
+      "failedToolCalls": 8
+    },
+    {
+      "task": "presentation",
+      "sessionUrl": "https://aipc/session/52c13217-50f9-4c54-a659-abca5f855803",
+      "completed": true,
+      "blocked": null,
+      "hasTurnError": false,
+      "observerError": null,
+      "errors": [],
+      "download": {
+        "filename": "primeagent-quality-20261026-140221.pptx",
+        "bytes": 35325,
+        "sha256": "b9e4fc907bf9eab907c32f80bf2dcd89bed961743f7b2c4d17e3a1fabbea36a2"
+      },
+      "tools": [
+        {
+          "tool": "read_file",
+          "status": "in_progress",
+          "title": "ReadFile: primeagent-quality-20261026-140221\\documents\\invoice-result.json"
+        },
+        {
+          "tool": "tool_search",
+          "status": "in_progress",
+          "title": "ToolSearch: select:mcp__local-workbench__create_presentation,mcp__local-workbench__read_document"
+        },
+        {
+          "tool": "read_file",
+          "status": "completed",
+          "title": null
+        },
+        {
+          "tool": "tool_search",
+          "status": "completed",
+          "title": null
+        },
+        {
+          "tool": "mcp__local-workbench__create_presentation",
+          "status": "in_progress",
+          "title": "mcp__local-workbench__create_presentation"
+        },
+        {
+          "tool": "mcp__local-workbench__create_presentation",
+          "status": "failed",
+          "title": null
+        },
+        {
+          "tool": "mcp__local-workbench__create_presentation",
+          "status": "in_progress",
+          "title": "mcp__local-workbench__create_presentation"
+        },
+        {
+          "tool": "mcp__local-workbench__create_presentation",
+          "status": "completed",
+          "title": null
+        },
+        {
+          "tool": "record_artifact",
+          "status": "in_progress",
+          "title": "RecordArtifact: Recording artifact primeagent-quality-20261026-140221.pptx"
+        },
+        {
+          "tool": "mcp__local-workbench__read_document",
+          "status": "in_progress",
+          "title": "mcp__local-workbench__read_document"
+        },
+        {
+          "tool": "record_artifact",
+          "status": "completed",
+          "title": null
+        },
+        {
+          "tool": "mcp__local-workbench__read_document",
+          "status": "completed",
+          "title": null
+        }
+      ],
+      "failedToolCalls": 1
+    }
+  ]
+}

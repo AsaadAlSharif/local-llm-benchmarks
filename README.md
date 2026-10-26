@@ -1,6 +1,32 @@
-# Local LLM benchmark results
+# PrimeAgent benchmark and test reports
 
 Measurements and submissions by **Asaad AlSharif**. Model and engine authors retain their original credits; these results do not claim authorship of Qwen or Strata.
+
+**[Complete benchmark and test inventory](ALL_BENCHMARKS.md)** includes the official Strata suites, historical/partial attempts, llm-bench.io results and actual PrimeAgent user-interface tests.
+
+## PrimeAgent tested through its real chat interface
+
+The latest custom functional evaluation used the normal HTTPS browser composer, Coder IQ1_M, deferred MCP discovery, actual tool execution and the artifact Download button. The original blocked document workflow and intermediate retries are retained alongside the corrected result.
+
+| Check | Result |
+|---|---|
+| Generated CSV parser | **546/546** independent checks passed; agent's own 53 tests also passed |
+| Arabic document, exact money calculations and PowerPoint download | **23/23** independent checks passed |
+| Final fresh document/presentation tasks | **Zero failed tool calls; zero browser errors** |
+| Delivered presentation | Two slides; PrimeAgent / Asaad AlSharif attribution; correct 560.18 AED total |
+
+[Full functional-test evidence and reproduction](primeagent/20261026-quality) · [Download the verified PowerPoint](primeagent/20261026-quality/PrimeAgent-Asaad-AlSharif.pptx?raw=true).
+
+This is a custom agent evaluation. It does not establish a global rank or a standardized model-benchmark score. The fix makes MCP document access and output delivery follow the portal's configured workspaces dynamically. No new speed benchmark was run.
+
+## Official Strata draft-standard submissions
+
+| Model | Measured requests | Sanity checks | Short / 4K / 16K decode medians |
+|---|---:|---:|---|
+| Q2_0 | 21 plus excluded warm-up | 12/12 | 270.7 / 258.0 / 220.4 tok/s |
+| IQ3_S | 21 plus excluded warm-up | 12/12 | 219.5 / 195.0 / 208.9 tok/s |
+
+[Public Strata PR #4166](https://github.com/Niko1221/Strata/pull/4166), awaiting maintainer review. The native draft protocol and its small sanity checks are separate from the PrimeAgent functional tests above.
 
 This repository preserves measured results, official runner outputs and reproduction settings. Each model variant and benchmark suite is a separate result. Interrupted attempts are documented locally and excluded from reported scores. A completed local run, a public upload and accepted leaderboard inclusion are separate states.
 

@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "checks": [
+    "primary workspace read",
+    "additional workspace read",
+    "outside and private paths denied",
+    "source changes apply without restart",
+    "removed inherited workspace denied",
+    "primary output and artifact locator follow source",
+    "additional workspace output",
+    "writes remain inside output directories",
+    "existing files preserved",
+    "filesystem root rejected"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "checkedAtUtc": "2026-10-26T14:22:21.5066428Z",
+  "daemonStatus": "ok",
+  "activity": {
+    "activePrompts": 0,
+    "pendingPrompts": 0,
+    "queuedPrompts": 0,
+    "lastActivityAt": "2026-10-26T14:19:50.000Z",
+    "idleSinceMs": 151392
+  },
+  "model": "qwen3.8-flash-next-coder-iq1_m",
+  "context": {
+    "native": 131072,
+    "max_positions": 131072
+  },
+  "inference": {
+    "requests": 239,
+    "in_flight": 0,
+    "last_request_at": 1793024459
+  },
+  "qwenVersion": "0.24.1",
+  "toolSourceSha256": "3E6CD2F73C0B1F79F9E0A959A54400D789AADDF7AEA72B78E988AA0BA6366EA9",
+  "speedBenchmarksDeferred": true
+}

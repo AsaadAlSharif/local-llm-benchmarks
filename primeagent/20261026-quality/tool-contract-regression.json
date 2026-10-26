@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "checks": [
+    "3*Rational('124.50')",
+    "2*Rational('80.00')",
+    "Rational(5,100)",
+    "floor((3*124.50+2*80.00)*0.05*100+1/2)/100",
+    "ceiling(1/2)",
+    "3*124.50+2*80.00+floor((3*124.50+2*80.00)*0.05*100+1/2)/100",
+    "Rejected: Rational('__import__(os)')",
+    "Rejected: Rational('1e999999999')",
+    "Rejected: __import__('os')",
+    "Rejected: x.__class__",
+    "presentation extension inferred"
+  ]
+}

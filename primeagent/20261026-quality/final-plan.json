@@ -1,0 +1,24 @@
+{
+  "createdAtUtc": "2026-10-26T14:18:36.944656+00:00",
+  "type": "custom functional evaluation; not a standardized leaderboard benchmark",
+  "directory": "<portal>\\benchmarks\\primeagent-quality\\20261026-141836",
+  "workspace": "<agent-workspace>\\primeagent-quality-20261026-141836",
+  "tasks": [
+    "coding",
+    "documents",
+    "presentation"
+  ],
+  "sampling": "existing PrimeAgent/model settings unchanged",
+  "speedBenchmark": false,
+  "retries": "no quality retries; original attempts retained",
+  "rubric": {
+    "coding": "Independent parser examples, malformed inputs and serialized CSV round-trip properties; agent must write and execute its own tests.",
+    "documents": "Actual document-reading and math MCP invocations, exact Arabic extraction and independently checked monetary values.",
+    "presentation": "Actual presentation MCP invocation, native artifact registration, browser Download, two-slide PPTX inspection and source-value agreement."
+  },
+  "prompts": {
+    "coding": "PrimeAgent independent functional test. Work only in <agent-workspace>\\primeagent-quality-20261026-141836\\coding. Implement parse-csv.cjs exporting { parseCsv } and write test.cjs with node:assert/strict. parseCsv(text) returns an array of rows (each an array of strings). Support commas, LF and CRLF record endings, fully quoted fields, doubled double-quotes, embedded newlines inside quoted fields, Unicode, and empty fields. Preserve field whitespace. Empty input returns []. A final record ending must not create a phantom extra row; actual blank records remain single empty fields. Reject non-string input with TypeError, and reject unclosed quoted fields, quotes appearing within unquoted fields, and characters following a closing quote before a delimiter/record ending with SyntaxError. Use only Node standard libraries. Actually execute your test.cjs with node.exe and fix your own failures. Do not delegate, change settings, inspect other projects or use network. Do not write outside the requested directory. Report PRIMEAGENT_CSV_DONE and actual test outcomes only after running them.",
+    "documents": "PrimeAgent local Arabic document/tool functional test. Read <agent-workspace>\\primeagent-quality-20261026-141836\\documents\\source-invoice.docx using the connected document-reading MCP tool. Discover and invoke the connected exact-math MCP calculator to compute its line totals, subtotal, VAT and final total. Follow the invoice's stated rounding rule. Write <agent-workspace>\\primeagent-quality-20261026-141836\\documents\\invoice-result.json with exactly these fields: invoiceId, supplier, currency, lineTotals (array in source order), subtotal, vat, total. Keep the supplier's exact Arabic text and use JSON numbers for amounts. Do not use shell or external network, delegate, read unrelated files or change settings. Report PRIMEAGENT_INVOICE_DONE with the actual values after reading the document, calling the calculator and writing the JSON.",
+    "presentation": "PrimeAgent local artifact functional test. Read the existing <agent-workspace>\\primeagent-quality-20261026-141836\\documents\\invoice-result.json. If it is absent, report blocked without inventing values. Using the connected presentation MCP tool, create exactly TWO slides. First title: \"PrimeAgent — Asaad AlSharif\". First slide includes the invoice ID, exact Arabic supplier and both line totals. Second title: \"Verified totals\". Second slide includes subtotal, VAT, total and currency exactly as recorded in the JSON. Set output_name to \"primeagent-quality-20261026-141836\". Register the resulting PowerPoint with the native artifact tool so the user sees a working Download button. Do not use shell or network, delegate, change settings or modify the source JSON. Report PRIMEAGENT_PRESENTATION_DONE and the downloadable artifact after actual tool success."
+  }
+}

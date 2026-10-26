@@ -1,0 +1,17 @@
+{
+  "checkedAtUtc": "2026-10-26T14:27:23.236915+00:00",
+  "application": "PrimeAgent",
+  "operator": "Asaad AlSharif",
+  "model": "qwen3.8-flash-next-coder-iq1_m",
+  "context": 131072,
+  "evaluation": "custom local functional checks; not a standardized leaderboard score",
+  "csvChecks": 546,
+  "csvPassed": 546,
+  "documentAndDownloadChecks": 23,
+  "documentAndDownloadPassed": 23,
+  "finalDocumentPresentationToolFailures": 0,
+  "finalDocumentPresentationBrowserErrors": 0,
+  "sourceToolSha256": "3e6cd2f73c0b1f79f9e0a959a54400d789aaddf7aea72b78e988aa0ba6366ea9",
+  "ranking": "not measured",
+  "speedBenchmark": false
+}
