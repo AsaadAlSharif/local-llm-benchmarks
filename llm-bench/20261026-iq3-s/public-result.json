@@ -1,0 +1,92 @@
+{
+  "id": "cmvp7iusf002101la2fljy8q2",
+  "url": "https://llm-bench.io/benchmarks/cmvp7iusf002101la2fljy8q2",
+  "metadata": {
+    "modelName": "qwen3.8-flash-next-iq3_s",
+    "tool": "Strata",
+    "toolVersion": "Strata (manual)",
+    "quantization": "$undefined",
+    "contextLength": 131072,
+    "kvCacheDtype": "$undefined",
+    "kvCacheStated": "$undefined",
+    "thinking": "$undefined",
+    "reasoningEffort": "xhigh (model default)",
+    "clientVersion": "0.4.98+102"
+  },
+  "comparison": {
+    "summary": {
+      "sameHardwareCount": 3,
+      "medianSpeed": 121.72522,
+      "fastestSpeed": 190.32742,
+      "medianQuality": 84.4875,
+      "cohort": [
+        {
+          "id": "cmvp7iusf002101la2fljy8q2",
+          "speed": 190.32742,
+          "quality": 88.42500000000001,
+          "timestamp": "2026-10-26T12:02:31.105Z",
+          "tool": "Strata",
+          "kvCacheDtype": null,
+          "quantization": null,
+          "expertOffload": null,
+          "gpuLabel": "NVIDIA GeForce RTX 5090",
+          "isThisRun": true
+        },
+        {
+          "id": "cmuu8c2nv013u01oxhdvvvhul",
+          "speed": 121.72522,
+          "quality": 84.4875,
+          "timestamp": "2026-10-04T19:44:25.198Z",
+          "tool": "Strata",
+          "kvCacheDtype": null,
+          "quantization": null,
+          "expertOffload": null,
+          "gpuLabel": "NVIDIA GeForce RTX 5090",
+          "isThisRun": false
+        },
+        {
+          "id": "cmur61fwr013g01o0j4id0rfk",
+          "speed": 111.77814,
+          "quality": 79.925,
+          "timestamp": "2026-10-02T16:16:51.143Z",
+          "tool": "Strata",
+          "kvCacheDtype": null,
+          "quantization": null,
+          "expertOffload": null,
+          "gpuLabel": "NVIDIA GeForce RTX 5090",
+          "isThisRun": false
+        }
+      ],
+      "otherHardware": [
+        {
+          "id": "cmve80xzw00rt01mwaxjw3fjz",
+          "speed": 67.856064,
+          "quality": 83.625,
+          "timestamp": "2026-10-18T19:31:09.789Z",
+          "tool": "Strata",
+          "kvCacheDtype": null,
+          "quantization": null,
+          "expertOffload": null,
+          "gpuLabel": "AMD Radeon RX 9070/9070 XT/9070 GRE",
+          "isThisRun": false
+        },
+        {
+          "id": "cmve8stnc00s001mwaq77yel1",
+          "speed": 64.85769,
+          "quality": 90.5,
+          "timestamp": "2026-10-18T19:52:50.469Z",
+          "tool": "Strata",
+          "kvCacheDtype": null,
+          "quantization": null,
+          "expertOffload": null,
+          "gpuLabel": "AMD Radeon RX 9070/9070 XT/9070 GRE",
+          "isThisRun": false
+        }
+      ],
+      "modelRunCount": 5
+    },
+    "modelName": "qwen3.8-flash-next-iq3_s",
+    "hardwareLabel": "NVIDIA GeForce RTX 5090",
+    "initialSort": "speed"
+  }
+}

@@ -1,0 +1,142 @@
+qwen3.8-flash-next-iq3_s on NVIDIA GeForce RTX 5090 — 190.3 tok/s | llm-bench.io
+llm-bench.io
+Benchmarks
+Models
+Compare
+Hardware
+Guides
+Client
+Methodology
+Benchmark result
+qwen3.8-flash-next-iq3_s on NVIDIA GeForce RTX 5090 — 190.3 tok/s
+Measured with
+Strata
+Strata (manual)
+on
+October 26, 2026
+.
+Share
+Copy link
+Reddit
+X
+qwen3.8-flash-next-iq3_s
+Unknown
+🧠 Thinking used
+NVIDIA GeForce RTX 5090
+31GB
+T/S
+190.3
+PP
+1,282.6
+TTFT
+491
+MEM
+80.3
+EFF
+2.37
+QUALITY
+88.4
+Agent
+93.9
+Code
+75.9
+RP
+95.2
+Research
+88.8
+Context window:
+131,072
+tokens
+≡
+Strata
+10/26/2026, 12:02:31 PM
+What the model built
+Open full screen →
+▶
+Play the game this run produced
+Runs in a sandboxed frame · may play sound
+The coding scenario asks for a playable game in a single HTML file. This is exactly what the model returned, unedited; the frame only adds a line that tells this page how tall it is.
+How this run compares
+1st
+fastest
+of
+3
+runs of this model
+on NVIDIA GeForce RTX 5090
+· median
+121.7 tok/s
+.
+sort
+speed
+quality
+1
+190.3
+tok/s
+88.4
+Strata
+this run
+2
+121.7
+tok/s
+84.5
+Strata
+3
+111.8
+tok/s
+79.9
+Strata
+Compare the nearest 5 →
+qwen3.8-flash-next-iq3_s
+on other hardware
+67.9
+tok/s
+83.6
+AMD Radeon RX 9070/9070 XT/9070 GRE
+64.9
+tok/s
+90.5
+AMD Radeon RX 9070/9070 XT/9070 GRE
+Reproduce this run
+Copy
+tool
+Strata Strata (manual)
+model
+qwen3.8-flash-next-iq3_s
+context
+131,072
+effort
+xhigh (model default)
+sampling
+temperature 1 · top_p 0.95 · top_k 20
+client
+v0.4.98+102
+Set those in
+Strata
+, then:
+llm-benchmark benchmark --model "qwen3.8-flash-next-iq3_s" --tool "Strata"
+The client prompts for context length and thinking mode, and for the KV cache dtype on Unsloth Studio. Sampling is left at the model default — the values above are what the tool reported using, not overrides the client sent.
+Related
+All
+qwen3.8-flash-next-iq3_s
+benchmarks
+Every run of this model, on every machine.
+All
+NVIDIA GeForce RTX 5090
+benchmarks
+What else this hardware has run.
+Browse all benchmarks
+The full feed, filterable by tool and hardware.
+Next step
+Run the same benchmark on your own machine and see where it lands against this one.
+Get the client
+llm-bench.io
+Community benchmark aggregator for local LLM performance
+Legal
+Impressum
+Privacy Policy
+Terms of Service
+Community
+Support
+©
+2026
+llm-bench.io. All rights reserved.

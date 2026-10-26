@@ -10,6 +10,7 @@ This repository preserves measured results, official runner outputs and reproduc
 |---|---|---:|---:|---|
 | llm-bench.io, client 0.4.98+102 | Qwen3.8 Flash-Next Coder IQ1_M | 172.3 tok/s | 80.8 / 100 | [Official result](https://llm-bench.io/benchmarks/cmvp6e3so000u01la94ncayf7) |
 | llm-bench.io, client 0.4.98+102 | Qwen3.8 Flash-Next Q2_0 | 226.6 tok/s | 83.4 / 100 | [Official result](https://llm-bench.io/benchmarks/cmvp78gin001901lappq748vm) |
+| llm-bench.io, client 0.4.98+102 | Qwen3.8 Flash-Next IQ3_S | 190.3 tok/s | 88.4 / 100 | [Official result](https://llm-bench.io/benchmarks/cmvp7iusf002101la2fljy8q2) |
 
 The Coder result is a complete four-scenario run. Its site-reported breakdown is agent workflow 79.4, coding 62.0, roleplay 93.7 and research 88.1. Prompt processing is 2,163.4 tok/s and average first-token latency is 195 ms. These are the platform's metrics and LLM-judge scores; the coding score is not a unit-test pass rate.
 
@@ -19,6 +20,7 @@ The Coder result is a complete four-scenario run. Its site-reported breakdown is
 - Actual installed engine for the Coder run: **Strata CLI 0.2.5 / engine 0.1.50**. The official client's manual-endpoint path displays `Strata (manual)` on the public page despite being supplied the measured version. The local run record preserves the actual version separately; no score was edited to compensate.
 - Coder used the source-advertised **131,072-token** context, source-default sampling (temperature 1, top-p 0.95, top-k 20) and source-default thinking effort (`xhigh`). Native image input was enabled and the native server exposed four slots.
 - The corrected Q2_0 run also used 131,072 tokens and source-default sampling/thinking. Its existing saved native profile had image input disabled and one slot. The site reports agent workflow 81.3, coding 77.2, roleplay 90.9 and research 84.1, with average first-token latency 108 ms. The profile difference means this is not an isolated quantization-only comparison against Coder.
+- IQ3_S used 131,072 tokens, source-default sampling/thinking, image input enabled and one slot. The site reports agent workflow 93.9, coding 75.9, roleplay 95.2 and research 88.8, prompt processing 1,282.6 tok/s and average first-token latency 491 ms.
 - Benchmarks run sequentially. The local speed-run launcher waits for an idle model and aborts its own client if another active inference is observed. It never cancels a user's chat.
 - Model files: [ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-Coder-GGUF](https://huggingface.co/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-Coder-GGUF). Coder first shard SHA-256: `e11083ba855e7666b48ea3f2db6a9c3a20c18751a012cc24f948de91b7087fad`.
 

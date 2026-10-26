@@ -1,0 +1,10 @@
+{
+  "checkedAtUtc": "2026-10-26T12:04:09.751Z",
+  "passed": true,
+  "url": "https://llm-bench.io/benchmarks/cmvp7iusf002101la2fljy8q2",
+  "model": "qwen3.8-flash-next-iq3_s",
+  "context": 131072,
+  "tool": "Strata",
+  "advertisedVersion": "Strata (manual)",
+  "measuredVersion": "0.2.5 (engine 0.1.50)"
+}

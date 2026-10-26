@@ -1,0 +1,47 @@
+﻿{
+    "startedAtUtc":  "2026-10-26T11:57:43.1940644Z",
+    "state":  "completed",
+    "model":  "qwen3.8-flash-next-iq3_s",
+    "context":  131072,
+    "sampling":  {
+                     "temperature":  1.0,
+                     "top_p":  0.95,
+                     "top_k":  20,
+                     "n_predict":  -1
+                 },
+    "slots":  1,
+    "modalities":  {
+                       "vision":  true
+                   },
+    "thinking":  "model default",
+    "tool":  "Strata",
+    "toolVersion":  "0.2.5 (engine 0.1.50)",
+    "client":  "LLM Benchmark Client 0.4.98",
+    "clientSha256":  "F261191B292D1EE24479B8EF08C21DD060757642E0C184FBA2D75BAA33195F4C",
+    "endpoint":  "http://127.0.0.1:18180",
+    "directory":  "D:\\AI\\Agent\\Qwen Code\\qwen-web\\benchmarks\\jobs\\llm-bench\\20261026-115743-qwen3.8-flash-next-iq3_s",
+    "interference":  false,
+    "submittedUrl":  "https://llm-bench.io/benchmarks/cmvp7iusf002101la2fljy8q2",
+    "processId":  48120,
+    "promptAnswers":  [
+                          {
+                              "kind":  "custom-context-menu",
+                              "answer":  "5"
+                          },
+                          {
+                              "kind":  "source-context-value",
+                              "answer":  "131072"
+                          },
+                          {
+                              "kind":  "source-thinking-default",
+                              "answer":  "1"
+                          },
+                          {
+                              "kind":  "source-effort-default",
+                              "answer":  "1"
+                          }
+                      ],
+    "exitCode":  0,
+    "clientReportedContext":  131072,
+    "finishedAtUtc":  "2026-10-26T12:02:34.7202190Z"
+}

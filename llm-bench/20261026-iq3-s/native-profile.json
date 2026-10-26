@@ -1,0 +1,14 @@
+﻿{
+    "checkedAtUtc":  "2026-10-26T11:57:27.5915651Z",
+    "choice":  "IQ3_S",
+    "model":  "qwen3.8-flash-next-iq3_s",
+    "context":  131072,
+    "slots":  1,
+    "images":  true,
+    "sampling":  {
+                     "temperature":  1.0,
+                     "top_p":  0.95,
+                     "top_k":  20,
+                     "n_predict":  -1
+                 }
+}
