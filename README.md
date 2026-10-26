@@ -25,3 +25,7 @@ The Coder result is a complete four-scenario run. Its site-reported breakdown is
 OpenClaw-based suites are excluded. The local runners do not call Google model/services, run Google's MBPP dataset or run Google's IFEval benchmark. Independent boards may list Google competitors. HumanEval+ preparation uses the unchanged EvalPlus OpenAI-compatible adapter and scorer, with Google SDK dependencies omitted; preparation is not a completed quality score.
 
 Every suite retains its own protocol and dataset version. Scores from different suites are not interchangeable. Comparisons between saved Strata profiles must account for image-input and slot settings; they are not automatically a controlled quantization-only experiment.
+
+## Excluded submission
+
+The earlier [Q2_0 submission cmvp6wrdy001101lakkk002k8](https://llm-bench.io/benchmarks/cmvp6wrdy001101lakkk002k8) is excluded. An extra device-fingerprint registration prompt shifted the initial automation's positional menu input. It uploaded an 8,192-token context label while the native runtime and intended benchmark context were 131,072. Do not use that entry in this comparison. The local withdrawal request returned HTTP 403; the site has not removed it. The corrected runner matches each actual prompt and records its source-derived answer before executing another benchmark.
