@@ -1,0 +1,80 @@
+{
+  "id": "cmvp6e3so000u01la94ncayf7",
+  "url": "https://llm-bench.io/benchmarks/cmvp6e3so000u01la94ncayf7",
+  "metadata": {
+    "modelName": "qwen3.8-flash-next-coder-iq1_m",
+    "tool": "Strata",
+    "toolVersion": "Strata (manual)",
+    "quantization": "$undefined",
+    "contextLength": 131072,
+    "kvCacheDtype": "$undefined",
+    "kvCacheStated": "$undefined",
+    "thinking": "$undefined",
+    "reasoningEffort": "xhigh (model default)",
+    "clientVersion": "0.4.98+102"
+  },
+  "comparison": {
+    "summary": {
+      "sameHardwareCount": 1,
+      "medianSpeed": 172.25305,
+      "fastestSpeed": 172.25305,
+      "medianQuality": 80.8,
+      "cohort": [
+        {
+          "id": "cmvp6e3so000u01la94ncayf7",
+          "speed": 172.25305,
+          "quality": 80.8,
+          "timestamp": "2026-10-26T11:30:51.668Z",
+          "tool": "Strata",
+          "kvCacheDtype": null,
+          "quantization": null,
+          "expertOffload": null,
+          "gpuLabel": "NVIDIA GeForce RTX 5090",
+          "isThisRun": true
+        }
+      ],
+      "otherHardware": [
+        {
+          "id": "cmut6b53400tn01ox1imvmvut",
+          "speed": 65.64057,
+          "quality": 72.2375,
+          "timestamp": "2026-10-04T01:59:54.786Z",
+          "tool": "Strata",
+          "kvCacheDtype": null,
+          "quantization": null,
+          "expertOffload": null,
+          "gpuLabel": "AMD Radeon RX 7900 XTX",
+          "isThisRun": false
+        },
+        {
+          "id": "cmuuw49cw018401oxbziw6i8y",
+          "speed": 43.317207,
+          "quality": 84.0375,
+          "timestamp": "2026-10-05T06:50:11.447Z",
+          "tool": "Strata",
+          "kvCacheDtype": null,
+          "quantization": null,
+          "expertOffload": null,
+          "gpuLabel": "AMD Radeon RX 9070/9070 XT/9070 GRE",
+          "isThisRun": false
+        },
+        {
+          "id": "cmuzxgbx900ie01nph4s8ncpf",
+          "speed": 42.15081,
+          "quality": 63.75,
+          "timestamp": "2026-10-08T19:26:23.722Z",
+          "tool": "Strata",
+          "kvCacheDtype": null,
+          "quantization": null,
+          "expertOffload": null,
+          "gpuLabel": "AMD Radeon RX 7800 XT",
+          "isThisRun": false
+        }
+      ],
+      "modelRunCount": 4
+    },
+    "modelName": "qwen3.8-flash-next-coder-iq1_m",
+    "hardwareLabel": "NVIDIA GeForce RTX 5090",
+    "initialSort": "speed"
+  }
+}

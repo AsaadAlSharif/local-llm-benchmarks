@@ -1,0 +1,18 @@
+﻿{
+    "checkedAtUtc":  "2026-10-26T11:00:30.0814758Z",
+    "model":  "qwen3.8-flash-next-coder-iq1_m",
+    "context":  131072,
+    "sampling":  {
+                     "temperature":  1.0,
+                     "top_p":  0.95,
+                     "top_k":  20,
+                     "n_predict":  -1
+                 },
+    "build":  "Strata 0.1.50",
+    "modelPath":  "D:\\AI\\Agent\\Qwen Code\\qwen-web\\models\\Strata\\models\\coder-IQ1_M\\Qwen3.8-Flash-Next-GSQ-RCO-IQ1_M-00001-of-00002.gguf",
+    "slots":  4,
+    "modalities":  {
+                       "vision":  true
+                   },
+    "benchmarkClient":  "F261191B292D1EE24479B8EF08C21DD060757642E0C184FBA2D75BAA33195F4C"
+}

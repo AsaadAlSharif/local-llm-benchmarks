@@ -1,0 +1,24 @@
+﻿{
+    "startedAtUtc":  "2026-10-26T11:24:59.5189959Z",
+    "state":  "completed",
+    "model":  "qwen3.8-flash-next-coder-iq1_m",
+    "context":  131072,
+    "sampling":  {
+                     "temperature":  1.0,
+                     "top_p":  0.95,
+                     "top_k":  20,
+                     "n_predict":  -1
+                 },
+    "thinking":  "model default",
+    "tool":  "Strata",
+    "toolVersion":  "0.2.5 (engine 0.1.50)",
+    "client":  "LLM Benchmark Client 0.4.98",
+    "clientSha256":  "F261191B292D1EE24479B8EF08C21DD060757642E0C184FBA2D75BAA33195F4C",
+    "endpoint":  "http://127.0.0.1:18180",
+    "directory":  "D:\\AI\\Agent\\Qwen Code\\qwen-web\\benchmarks\\jobs\\llm-bench\\20261026-112459-qwen3.8-flash-next-coder-iq1_m",
+    "interference":  false,
+    "submittedUrl":  "https://llm-bench.io/benchmarks/cmvp6e3so000u01la94ncayf7",
+    "processId":  37132,
+    "exitCode":  0,
+    "finishedAtUtc":  "2026-10-26T11:30:57.3832151Z"
+}
