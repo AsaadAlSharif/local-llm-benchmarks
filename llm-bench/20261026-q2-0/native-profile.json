@@ -1,0 +1,14 @@
+﻿{
+    "checkedAtUtc":  "2026-10-26T11:41:33.4156625Z",
+    "choice":  "Q2_0",
+    "model":  "qwen3.8-flash-next-q2_0",
+    "context":  131072,
+    "slots":  1,
+    "images":  false,
+    "sampling":  {
+                     "temperature":  1.0,
+                     "top_p":  0.95,
+                     "top_k":  20,
+                     "n_predict":  -1
+                 }
+}

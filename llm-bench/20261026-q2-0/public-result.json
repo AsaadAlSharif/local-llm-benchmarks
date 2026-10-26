@@ -1,0 +1,55 @@
+{
+  "id": "cmvp78gin001901lappq748vm",
+  "url": "https://llm-bench.io/benchmarks/cmvp78gin001901lappq748vm",
+  "metadata": {
+    "modelName": "qwen3.8-flash-next-q2_0",
+    "tool": "Strata",
+    "toolVersion": "Strata (manual)",
+    "quantization": "Q2_0",
+    "contextLength": 131072,
+    "kvCacheDtype": "$undefined",
+    "kvCacheStated": "$undefined",
+    "thinking": "$undefined",
+    "reasoningEffort": "xhigh (model default)",
+    "clientVersion": "0.4.98+102"
+  },
+  "comparison": {
+    "summary": {
+      "sameHardwareCount": 2,
+      "medianSpeed": 227.563065,
+      "fastestSpeed": 228.56949,
+      "medianQuality": 77.19999999999999,
+      "cohort": [
+        {
+          "id": "cmvp6wrdy001101lakkk002k8",
+          "speed": 228.56949,
+          "quality": 71.0375,
+          "timestamp": "2026-10-26T11:45:22.298Z",
+          "tool": "Strata",
+          "kvCacheDtype": null,
+          "quantization": "Q2_0",
+          "expertOffload": null,
+          "gpuLabel": "NVIDIA GeForce RTX 5090",
+          "isThisRun": false
+        },
+        {
+          "id": "cmvp78gin001901lappq748vm",
+          "speed": 226.55664,
+          "quality": 83.3625,
+          "timestamp": "2026-10-26T11:54:27.874Z",
+          "tool": "Strata",
+          "kvCacheDtype": null,
+          "quantization": "Q2_0",
+          "expertOffload": null,
+          "gpuLabel": "NVIDIA GeForce RTX 5090",
+          "isThisRun": true
+        }
+      ],
+      "otherHardware": [],
+      "modelRunCount": 2
+    },
+    "modelName": "qwen3.8-flash-next-q2_0",
+    "hardwareLabel": "NVIDIA GeForce RTX 5090",
+    "initialSort": "speed"
+  }
+}

@@ -1,0 +1,125 @@
+qwen3.8-flash-next-q2_0 on NVIDIA GeForce RTX 5090 — 226.6 tok/s | llm-bench.io
+llm-bench.io
+Benchmarks
+Models
+Compare
+Hardware
+Guides
+Client
+Methodology
+Benchmark result
+qwen3.8-flash-next-q2_0 on NVIDIA GeForce RTX 5090 — 226.6 tok/s
+Measured with
+Strata
+Strata (manual)
+on
+October 26, 2026
+.
+Share
+Copy link
+Reddit
+X
+qwen3.8-flash-next-q2_0
+Unknown
+🧠 Thinking used
+NVIDIA GeForce RTX 5090
+31GB
+T/S
+226.6
+TTFT
+108
+MEM
+101.0
+EFF
+2.24
+QUALITY
+83.4
+Agent
+81.3
+Code
+77.2
+RP
+90.9
+Research
+84.1
+Context window:
+131,072
+tokens
+≡
+Strata
+10/26/2026, 11:54:27 AM
+What the model built
+Open full screen →
+▶
+Play the game this run produced
+Runs in a sandboxed frame · may play sound
+The coding scenario asks for a playable game in a single HTML file. This is exactly what the model returned, unedited; the frame only adds a line that tells this page how tall it is.
+How this run compares
+2nd
+fastest
+of
+2
+runs of this model
+on NVIDIA GeForce RTX 5090
+· median
+227.6 tok/s
+.
+sort
+speed
+quality
+1
+228.6
+tok/s
+71.0
+Strata · Q2_0
+2
+226.6
+tok/s
+83.4
+Strata · Q2_0
+this run
+Compare the nearest 5 →
+Reproduce this run
+Copy
+tool
+Strata Strata (manual)
+model
+qwen3.8-flash-next-q2_0 (Q2_0)
+context
+131,072
+effort
+xhigh (model default)
+sampling
+temperature 1 · top_p 0.95 · top_k 20
+client
+v0.4.98+102
+Set those in
+Strata
+, then:
+llm-benchmark benchmark --model "qwen3.8-flash-next-q2_0" --tool "Strata"
+The client prompts for context length and thinking mode, and for the KV cache dtype on Unsloth Studio. Sampling is left at the model default — the values above are what the tool reported using, not overrides the client sent.
+Related
+All
+qwen3.8-flash-next-q2_0
+benchmarks
+Every run of this model, on every machine.
+All
+NVIDIA GeForce RTX 5090
+benchmarks
+What else this hardware has run.
+Browse all benchmarks
+The full feed, filterable by tool and hardware.
+Next step
+Run the same benchmark on your own machine and see where it lands against this one.
+Get the client
+llm-bench.io
+Community benchmark aggregator for local LLM performance
+Legal
+Impressum
+Privacy Policy
+Terms of Service
+Community
+Support
+©
+2026
+llm-bench.io. All rights reserved.

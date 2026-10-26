@@ -1,0 +1,51 @@
+﻿{
+    "startedAtUtc":  "2026-10-26T11:48:39.4901479Z",
+    "state":  "completed",
+    "model":  "qwen3.8-flash-next-q2_0",
+    "context":  131072,
+    "sampling":  {
+                     "temperature":  1.0,
+                     "top_p":  0.95,
+                     "top_k":  20,
+                     "n_predict":  -1
+                 },
+    "slots":  1,
+    "modalities":  {
+                       "vision":  false
+                   },
+    "thinking":  "model default",
+    "tool":  "Strata",
+    "toolVersion":  "0.2.5 (engine 0.1.50)",
+    "client":  "LLM Benchmark Client 0.4.98",
+    "clientSha256":  "F261191B292D1EE24479B8EF08C21DD060757642E0C184FBA2D75BAA33195F4C",
+    "endpoint":  "http://127.0.0.1:18180",
+    "directory":  "D:\\AI\\Agent\\Qwen Code\\qwen-web\\benchmarks\\jobs\\llm-bench\\20261026-114839-qwen3.8-flash-next-q2_0",
+    "interference":  false,
+    "submittedUrl":  "https://llm-bench.io/benchmarks/cmvp78gin001901lappq748vm",
+    "processId":  63496,
+    "promptAnswers":  [
+                          {
+                              "kind":  "native-device-registration-refresh",
+                              "answer":  "y"
+                          },
+                          {
+                              "kind":  "custom-context-menu",
+                              "answer":  "5"
+                          },
+                          {
+                              "kind":  "source-context-value",
+                              "answer":  "131072"
+                          },
+                          {
+                              "kind":  "source-thinking-default",
+                              "answer":  "1"
+                          },
+                          {
+                              "kind":  "source-effort-default",
+                              "answer":  "1"
+                          }
+                      ],
+    "exitCode":  0,
+    "clientReportedContext":  131072,
+    "finishedAtUtc":  "2026-10-26T11:54:29.5647413Z"
+}

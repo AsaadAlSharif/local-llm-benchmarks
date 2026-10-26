@@ -1,0 +1,10 @@
+{
+  "checkedAtUtc": "2026-10-26T11:59:06.797Z",
+  "passed": true,
+  "url": "https://llm-bench.io/benchmarks/cmvp78gin001901lappq748vm",
+  "model": "qwen3.8-flash-next-q2_0",
+  "context": 131072,
+  "tool": "Strata",
+  "advertisedVersion": "Strata (manual)",
+  "measuredVersion": "0.2.5 (engine 0.1.50)"
+}
