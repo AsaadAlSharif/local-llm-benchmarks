@@ -1,0 +1,20 @@
+{
+  "checkedAtUtc": "2026-10-26T15:13:17.9934252Z",
+  "portalHttpStatus": 200,
+  "daemon": "ok",
+  "activity": {
+    "activePrompts": 0,
+    "pendingPrompts": 0,
+    "queuedPrompts": 0,
+    "lastActivityAt": "2026-10-26T15:05:51.376Z",
+    "idleSinceMs": 446591
+  },
+  "model": [
+    {
+      "id": "qwen3.8-flash-next-coder-iq1_m",
+      "status": {
+        "value": "loaded"
+      }
+    }
+  ]
+}

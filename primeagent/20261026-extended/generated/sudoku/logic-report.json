@@ -1,0 +1,77 @@
+{
+  "fixture": "530070000600195000098000060800060003400803001700020006060000280000419005000080079",
+  "embedded": "530070000600195000098000060800060003400803001700020006060000280000419005000080079",
+  "solution": "534678912672195348198342567859761423426853791713924856961537284287419635345286179",
+  "results": [
+    {
+      "name": "embedded puzzle present",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "embedded puzzle === puzzle.txt",
+      "ok": true,
+      "detail": "530070000600195000098000060800060003400803001700020006060000280000419005000080079 vs 530070000600195000098000060800060003400803001700020006060000280000419005000080079"
+    },
+    {
+      "name": "81 grid inputs",
+      "ok": true,
+      "detail": "81"
+    },
+    {
+      "name": "data-row/data-col/data-given/value correct for all cells",
+      "ok": true,
+      "detail": "rows/cols 0..8 zero-based"
+    },
+    {
+      "name": "role=\"status\" present exactly once",
+      "ok": true,
+      "detail": "1"
+    },
+    {
+      "name": "button with exact visible name Check",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "button with exact visible name Reset",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "button with exact visible name Solve",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "no external subresource refs",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "givens do not conflict",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "name": "puzzle has at least one solution",
+      "ok": true,
+      "detail": "1"
+    },
+    {
+      "name": "solution is unique",
+      "ok": true,
+      "detail": "1"
+    },
+    {
+      "name": "unique solution is valid",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "solution preserves givens",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}

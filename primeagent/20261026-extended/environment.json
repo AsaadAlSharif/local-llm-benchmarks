@@ -1,0 +1,15 @@
+{
+  "checkedAtUtc": "2026-10-26T14:54:07.9012182Z",
+  "gpu": "NVIDIA GeForce RTX 5090, 32607 MiB, 617.42",
+  "cpu": "AMD Ryzen 9 9950X 16-Core Processor            ",
+  "ramBytes": 85547307008,
+  "os": {
+    "Caption": "Microsoft Windows 11 Pro for Workstations",
+    "Version": "10.0.26300",
+    "BuildNumber": "26300"
+  },
+  "node": "v24.21.0",
+  "python": "Python 3.14.7",
+  "interface": "actual HTTPS browser composer",
+  "speedBenchmark": false
+}

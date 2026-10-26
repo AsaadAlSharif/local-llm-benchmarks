@@ -1,0 +1,34 @@
+{
+  "createdAtUtc": "2026-10-26T14:44:52.022164+00:00",
+  "type": "PrimeAgent extended custom functional evaluation, not a standardized leaderboard",
+  "directory": "<portal>\\benchmarks\\primeagent-extended\\20261026-144451",
+  "workspace": "<agent-workspace>\\primeagent-extended-20261026-144451",
+  "tasks": [
+    "repair",
+    "sql",
+    "sudoku",
+    "evidence"
+  ],
+  "downloads": {
+    "sudoku": ".html"
+  },
+  "sampling": "Existing selected model and defaults unchanged",
+  "speedBenchmark": false,
+  "retries": "One initial agent turn per task; self-correction within that turn retained; no grader feedback or external repair",
+  "rubric": {
+    "repair": "Independent Decimal edge/invalid-input/nonmutation tests plus actual agent test execution",
+    "sql": "Read-only data preserved, correct rows on source and unseen join/overpayment/status fixtures",
+    "sudoku": "Actual browser typing, locking, checks, reset, solving, arrows, phone layout and downloadable byte equality",
+    "evidence": "Read all DOCX files, invoke exact math, preserve Arabic, choose approved evidence and exact totals"
+  },
+  "prompts": {
+    "repair": "PrimeAgent benchmark: repair the existing Python settlement module in <agent-workspace>\\primeagent-extended-20261026-144451\\repair. Keep the public settle_invoice(items, tax_percent='5', discount='0') signature. Each item has quantity (positive int, excluding bool) and unit_price (nonnegative finite decimal string). tax_percent is a finite decimal string from 0 through 100; discount is a nonnegative finite decimal string. Empty items is allowed. Reject invalid inputs with ValueError. Use exact Decimal arithmetic: round each line quantity*price HALF_UP to cents, sum rounded lines, round discount HALF_UP to cents, reject discount above subtotal, and compute HALF_UP tax on (subtotal-discount). Return ONLY line_totals (list) and subtotal, discount, tax, total, with all monetary values formatted as two-decimal strings. Do not mutate items. Write your own regression tests, actually execute them with Python, and fix your failures. Explain the original bug and report actual test results. Work only in this task directory. Do not delegate, use network, change global settings, inspect other projects, or access the benchmark grader. Preserve source fixtures. Use the existing local tools and runtime.",
+    "sql": "PrimeAgent benchmark in <agent-workspace>\\primeagent-extended-20261026-144451\\sql: inspect schema.sql and accounts.db. Write report.sql as one read-only SQLite SELECT (WITH allowed). Return EVERY customer, including those with no issued invoices, with these exact columns: customer_id, name, invoice_total_cents, paid_cents, credit_cents, outstanding_cents. Include only issued invoices; payments must be posted and credits approved. Do not multiply amounts when one invoice has multiple payments and credits. Outstanding is SUM over issued invoices of MAX(invoice total - its posted payments - its approved credits, 0), so an overpayment never cancels another invoice's debt. All amount columns must be integer cents, using 0 where absent. Sort outstanding_cents DESC then customer_id ASC. Execute it against accounts.db using Python sqlite3, save the actual row dictionaries as result.json, and write/run a small verification script. Do not modify the database. Work only in this task directory. Do not delegate, use network, change global settings, inspect other projects, or access the benchmark grader. Preserve source fixtures. Use the existing local tools and runtime.",
+    "sudoku": "PrimeAgent benchmark in <agent-workspace>\\primeagent-extended-20261026-144451\\sudoku: build a playable self-contained sudoku.html without dependencies. Use puzzle.txt as the fixed starting puzzle (row-major 81 digits, 0 means empty). Render 81 input cells with data-row and data-col attributes, zero-based; lock given digits. Support typing 1-9 and clearing cells, and reject other input. Buttons with exact visible names: Check, Reset, Solve. A visible status element must have role=\"status\". Check must distinguish a complete valid solution from incomplete or conflicting entries; an incomplete puzzle must NEVER report success. Reset restores precisely the given puzzle. Solve must compute a valid solution, preserve givens, and fill all cells. Support ArrowRight/ArrowLeft/ArrowDown/ArrowUp focus navigation within the 9x9 grid. Make it usable at phone width without horizontal overflow. Actually run meaningful checks on your generated game, using an available browser tool or an executable JS test harness. Register sudoku.html as a native artifact so the user can Download it. Report only actual outcomes. Work only in this task directory. Do not delegate, use network, change global settings, inspect other projects, or access the benchmark grader. Preserve source fixtures. Use the existing local tools and runtime.",
+    "evidence": "PrimeAgent benchmark in <agent-workspace>\\primeagent-extended-20261026-144451\\evidence: read all three source DOCX reports with the connected document MCP tools. Choose the most recent APPROVED report by its document date, not the most recent filename/date regardless of status; compare it with the previous approved report. Use the connected math tool to independently check both totals, the change, and percent increase. Write result.json with EXACTLY: project, supplier, currency, currentDate, previousDate, currentSource, previousSource, excludedSources (filename list), currentTotal, previousTotal, delta, percentIncrease. Preserve exact Arabic project/supplier; amounts are JSON numbers. In the final answer cite each source filename and explain why the draft was excluded. Do not invent evidence or silently combine draft and approved amounts. Work only in this task directory. Do not delegate, use network, change global settings, inspect other projects, or access the benchmark grader. Preserve source fixtures. Use the existing local tools and runtime."
+  },
+  "frozenGraderSha256": {
+    "Grade-PrimeAgentExtended.py": "d11ffd7b92dc081f65f57fbd94ad65d3901a16ed7eef9a3a98427bcf237dc425",
+    "Grade-PrimeAgentSudoku.cjs": "878f739099fc00b8a037a536731c2cd0b1df7df0f2f64aa9fb22c0a8a0aac76a"
+  }
+}

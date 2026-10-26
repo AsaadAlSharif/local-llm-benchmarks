@@ -1,0 +1,52 @@
+{
+  "generatedAtUtc": "2026-10-26T15:16:23.883899+00:00",
+  "model": "qwen3.8-flash-next-coder-iq1_m",
+  "taskResults": {
+    "repair": {
+      "passed": 54,
+      "checks": 54,
+      "failed": []
+    },
+    "sql": {
+      "passed": 11,
+      "checks": 11,
+      "failed": []
+    },
+    "sudoku": {
+      "passed": 18,
+      "checks": 21,
+      "failed": [
+        {
+          "task": "sudoku",
+          "name": "UI turn completed without browser/observer/turn errors",
+          "passed": false,
+          "error": "UI turn completed without browser/observer/turn errors"
+        },
+        {
+          "name": "Browser Download matches generated file byte for byte",
+          "passed": false,
+          "error": "ENOENT: no such file or directory, open '<portal>\\benchmarks\\primeagent-extended\\20261026-144451\\downloaded-sudoku.html'"
+        },
+        {
+          "name": "Zero is rejected",
+          "passed": false,
+          "error": "Expected values to be strictly equal:\n\n'0' !== ''\n"
+        }
+      ]
+    },
+    "evidence": {
+      "passed": 1,
+      "checks": 2,
+      "failed": [
+        {
+          "task": "evidence",
+          "name": "Load evidence result",
+          "passed": false,
+          "error": "[Errno 2] No such file or directory: 'D:\\\\AI\\\\Agent\\\\Workspace\\\\primeagent-extended-20261026-144451\\\\evidence\\\\result.json'"
+        }
+      ]
+    }
+  },
+  "globalRank": null,
+  "speedBenchmark": false
+}

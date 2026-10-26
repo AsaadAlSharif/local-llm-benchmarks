@@ -1,0 +1,428 @@
+// Generates sudoku.html from puzzle.txt so the embedded puzzle cannot drift from the fixture.
+import fs from 'node:fs';
+
+const dir = import.meta.dirname;
+const raw = fs.readFileSync(dir + '/puzzle.txt', 'utf8');
+const puzzle = raw.replace(/[^0-9]/g, '');
+if (puzzle.length !== 81) throw new Error('puzzle.txt must yield exactly 81 digits, got ' + puzzle.length);
+
+const givens = puzzle.split('').filter(d => d !== '0').length;
+
+const inputs = [];
+for (let i = 0; i < 81; i++) {
+  const row = (i / 9) | 0;
+  const col = i % 9;
+  const d = puzzle[i];
+  const given = d !== '0';
+  inputs.push(
+    `<input type="text"${given ? ' readonly' : ''} value="${given ? d : ''}" maxlength="1" autocomplete="off" spellcheck="false" data-row="${row}" data-col="${col}" data-given="${given}" data-index="${i}" aria-label="Row ${row + 1} column ${col + 1}" class="cell"/>`
+  );
+}
+
+const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sudoku</title>
+<style>
+  :root {
+    --ink: #1b2330;
+    --ink-soft: #5a6472;
+    --paper: #fbfcfe;
+    --line: #96a1b2;
+    --thick: #33405a;
+    --given: #10212f;
+    --play: #0b5b8f;
+    --warn: #a3382b;
+    --ok: #14693b;
+  }
+  * { box-sizing: border-box; }
+  html, body { overflow-x: hidden; }
+  body {
+    margin: 0;
+    padding: 10px;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.35;
+  }
+  main { max-width: 100%; }
+  h1 { font-size: clamp(18px, 5vw, 26px); margin: 4px 0 2px; }
+  .lede, .legend { font-size: clamp(12px, 3.4vw, 15px); color: var(--ink-soft); }
+  .legend code { font-family: monospace; }
+  .controls { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+  .controls button {
+    font-size: clamp(13px, 3.6vw, 16px);
+    padding: 8px 14px;
+    border: 1px solid var(--thick);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--ink);
+    cursor: pointer;
+  }
+  .controls button:focus-visible { outline: 3px solid var(--play); outline-offset: 2px; }
+  #board {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    width: min(88vw, 460px);
+    aspect-ratio: 1;
+    max-width: 100%;
+    border: 3px solid var(--thick);
+    background: var(--line);
+  }
+  .cell {
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--line);
+    background: #fff;
+    color: var(--play);
+    font-size: clamp(12px, 3.4vw, 22px);
+    font-weight: 600;
+    font-family: inherit;
+    text-align: center;
+    padding: 0;
+    line-height: 1;
+  }
+  .cell[data-given="true"] { color: var(--given); background: #eef2f7; cursor: default; }
+  .cell[data-col="2"], .cell[data-col="5"] { border-right: 3px solid var(--thick); }
+  .cell[data-row="2"], .cell[data-row="5"] { border-bottom: 3px solid var(--thick); }
+  .cell:focus, .cell:focus-visible { outline: 3px solid var(--play); outline-offset: -1px; background: #dbeafe; }
+  #status {
+    margin: 10px 0 4px;
+    padding: 8px 10px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--ink);
+    font-size: clamp(12px, 3.3vw, 15px);
+    min-height: 1.4em;
+  }
+  #status[data-state="conflicts"] { background: #fae8e3; border-color: var(--warn); }
+  #status[data-state="solved"] { background: #e6f3ea; border-color: var(--ok); }
+  #status[data-state="incomplete"] { background: #fffbe6; }
+  #feedback {
+    font-size: clamp(11px, 3.2vw, 14px);
+    color: var(--ink-soft);
+    min-height: 1.3em;
+    margin: 2px 0 0;
+  }
+  #feedback[data-kind="rejected"] { color: var(--warn); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Sudoku</h1>
+  <p class="lede">Fill the grid so every row, column and 3x3 box holds 1-9 once. Thick lines separate the boxes.</p>
+  <p class="legend" id="legend">Focus a cell by clicking or Tab, type <code>1</code>&ndash;<code>9</code> to place a digit, <code>Backspace</code>/<code>Delete</code>/<code>0</code> to clear, and ArrowLeft, ArrowRight, ArrowUp, ArrowDown to move focus inside the 9x9 grid. Any other key is rejected.</p>
+  <div class="controls">
+    <button type="button" id="btn-check">Check</button>
+    <button type="button" id="btn-reset">Reset</button>
+    <button type="button" id="btn-solve">Solve</button>
+  </div>
+  <div id="board" data-puzzle="${puzzle}">${inputs.join('\n')}
+  </div>
+  <div id="status" role="status" aria-live="polite" aria-atomic="true" data-state="incomplete">Given puzzle loaded: ${givens} givens, ${81 - givens} empty cells.</div>
+  <p id="feedback" aria-live="polite" data-kind="none"></p>
+</main>
+<script>
+(function () {
+  var board = document.getElementById('board');
+  var statusEl = document.getElementById('status');
+  var feedbackEl = document.getElementById('feedback');
+  var PUZZLE = board.getAttribute('data-puzzle');
+  var cells = [];
+  var indexByEl = new Map();
+
+  function range(from, len, stride) {
+    var a = [];
+    for (var k = 0; k < len; k++) a.push(from + k * stride);
+    return a;
+  }
+
+  // Map every grid input to its row-major slot using data-row / data-col (zero-based).
+  var nodes = board.querySelectorAll('input');
+  for (var n = 0; n < nodes.length; n++) {
+    var el = nodes[n];
+    var r = parseInt(el.getAttribute('data-row'), 10);
+    var c = parseInt(el.getAttribute('data-col'), 10);
+    if (isNaN(r) || isNaN(c) || r < 0 || r > 8 || c < 0 || c > 8) continue;
+    cells[r * 9 + c] = el;
+    indexByEl.set(el, r * 9 + c);
+  }
+  if (cells.length !== 81) throw new Error('expected 81 grid inputs, found ' + cells.length);
+
+  var GIVEN = [];
+  var GIVEN_DIGIT = [];
+  for (var i = 0; i < 81; i++) {
+    var d = PUZZLE.charAt(i);
+    GIVEN[i] = d !== '0';
+    GIVEN_DIGIT[i] = GIVEN[i] ? d : '';
+    if (!GIVEN[i]) cells[i].value = '';
+  }
+
+  var UNITS = [];
+  for (var row = 0; row < 9; row++) UNITS.push(range(row * 9, 9, 1));
+  for (var col = 0; col < 9; col++) UNITS.push(range(col, 9, 9));
+  for (var br = 0; br < 3; br++) {
+    for (var bc = 0; bc < 3; bc++) {
+      var box = [];
+      for (var rr = 0; rr < 3; rr++) {
+        for (var cc = 0; cc < 3; cc++) box.push((br * 3 + rr) * 9 + (bc * 3 + cc));
+      }
+      UNITS.push(box);
+    }
+  }
+
+  var PEERS = [];
+  for (var p = 0; p < 81; p++) {
+    var seen = {};
+    var list = [];
+    for (var u = 0; u < UNITS.length; u++) {
+      var unit = UNITS[u];
+      if (unit.indexOf(p) === -1) continue;
+      for (var k = 0; k < 9; k++) {
+        var j = unit[k];
+        if (j !== p && !seen[j]) { seen[j] = 1; list.push(j); }
+      }
+    }
+    PEERS.push(list);
+  }
+
+  function values() {
+    var v = [];
+    for (var i2 = 0; i2 < 81; i2++) {
+      var val = cells[i2].value;
+      v.push(/^[1-9]$/.test(val) ? val : '');
+    }
+    return v;
+  }
+
+  function normalize() {
+    for (var i2 = 0; i2 < 81; i2++) {
+      var val = cells[i2].value;
+      if (/^[1-9]$/.test(val)) {
+        if (GIVEN[i2] && val !== GIVEN_DIGIT[i2]) cells[i2].value = GIVEN_DIGIT[i2];
+      } else {
+        cells[i2].value = GIVEN[i2] ? GIVEN_DIGIT[i2] : '';
+      }
+    }
+  }
+
+  function conflicts(v) {
+    var bad = {};
+    var pairs = [];
+    for (var u2 = 0; u2 < UNITS.length; u2++) {
+      var unit = UNITS[u2];
+      var seen2 = {};
+      for (var k2 = 0; k2 < 9; k2++) {
+        var idx = unit[k2];
+        var digit = v[idx];
+        if (digit === '') continue;
+        if (seen2[digit] !== undefined) {
+          bad[idx] = true;
+          bad[seen2[digit]] = true;
+          pairs.push(seen2[digit] + '-' + idx);
+        } else {
+          seen2[digit] = idx;
+        }
+      }
+    }
+    return { bad: bad, pairs: pairs };
+  }
+
+  function setState(state, text) {
+    statusEl.setAttribute('data-state', state);
+    statusEl.textContent = text;
+  }
+
+  function setFeedback(kind, text) {
+    feedbackEl.setAttribute('data-kind', kind);
+    feedbackEl.textContent = text;
+  }
+
+  function doCheck() {
+    normalize();
+    var v = values();
+    var filled = 0;
+    for (var i2 = 0; i2 < 81; i2++) if (v[i2] !== '') filled++;
+    var empty = 81 - filled;
+    var c = conflicts(v);
+    if (c.pairs.length > 0) {
+      setState('conflicts', 'Conflicting entries: ' + c.pairs.length + ' duplicate pair(s) share a row, column or box. ' + empty + ' cell(s) are empty.');
+      return;
+    }
+    if (empty > 0) {
+      setState('incomplete', 'In progress: ' + filled + ' of 81 cells filled, ' + empty + ' empty. Keep going - the puzzle is not finished.');
+      return;
+    }
+    setState('solved', 'Solved: all 81 cells are filled and every row, column and 3x3 box holds 1-9 exactly once.');
+  }
+
+  function doReset() {
+    for (var i2 = 0; i2 < 81; i2++) cells[i2].value = GIVEN[i2] ? GIVEN_DIGIT[i2] : '';
+    var givens = 0;
+    for (var i3 = 0; i3 < 81; i3++) if (GIVEN[i3]) givens++;
+    setState('incomplete', 'Reset: the board now holds exactly the given puzzle - ' + givens + ' givens and ' + (81 - givens) + ' empty cells.');
+    setFeedback('none', '');
+  }
+
+  function solve(v) {
+    var grid = v.slice();
+    for (var i2 = 0; i2 < 81; i2++) if (GIVEN[i2]) grid[i2] = GIVEN_DIGIT[i2];
+    var blanks = [];
+    for (var i3 = 0; i3 < 81; i3++) if (grid[i3] === '') blanks.push(i3);
+
+    function optionsFor(idx) {
+      var out = [];
+      var peers = PEERS[idx];
+      for (var d = 1; d <= 9; d++) {
+        var digit = String(d);
+        var clash = false;
+        for (var k = 0; k < peers.length; k++) {
+          if (grid[peers[k]] === digit) { clash = true; break; }
+        }
+        if (!clash) out.push(digit);
+      }
+      return out;
+    }
+
+    function search(depth) {
+      if (depth === blanks.length) return true;
+      var bestPos = depth;
+      var bestOpts = null;
+      for (var q = depth; q < blanks.length; q++) {
+        var opts = optionsFor(blanks[q]);
+        if (opts.length === 0) return false;
+        if (bestOpts === null || opts.length < bestOpts.length) {
+          bestPos = q;
+          bestOpts = opts;
+          if (opts.length === 1) break;
+        }
+      }
+      if (bestPos !== depth) {
+        var t = blanks[depth];
+        blanks[depth] = blanks[bestPos];
+        blanks[bestPos] = t;
+      }
+      var target = blanks[depth];
+      for (var o = 0; o < bestOpts.length; o++) {
+        grid[target] = bestOpts[o];
+        if (search(depth + 1)) return true;
+      }
+      grid[target] = '';
+      return false;
+    }
+
+    return search(0) ? grid : null;
+  }
+
+  function doSolve() {
+    normalize();
+    var sol = solve(values());
+    if (sol === null) {
+      setState('conflicts', 'No solution exists for the current entries. Reset to the given puzzle and try again.');
+      return;
+    }
+    for (var i2 = 0; i2 < 81; i2++) cells[i2].value = sol[i2];
+    setState('solved', 'Solved: a complete valid solution is shown in all 81 cells; the given digits are preserved.');
+  }
+
+  var btnCheck = document.getElementById('btn-check');
+  var btnReset = document.getElementById('btn-reset');
+  var btnSolve = document.getElementById('btn-solve');
+  btnCheck.addEventListener('click', function (e) { e.preventDefault(); doCheck(); });
+  btnReset.addEventListener('click', function (e) { e.preventDefault(); doReset(); });
+  btnSolve.addEventListener('click', function (e) { e.preventDefault(); doSolve(); });
+  btnCheck.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); doCheck(); } });
+  btnReset.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); doReset(); } });
+  btnSolve.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); doSolve(); } });
+
+  // Given cells carry the HTML readonly attribute (the browser blocks user edits) and the
+  // keydown handler below rejects digits before they reach the element. normalize() below
+  // re-asserts every given digit at the start of each game operation.
+
+  function focusIndex() {
+    var el = document.activeElement;
+    return indexByEl.has(el) ? indexByEl.get(el) : -1;
+  }
+
+  function focusCell(idx) {
+    cells[idx].focus();
+    return idx;
+  }
+
+  function moveFocus(idx, dr, dc) {
+    var r = (idx / 9) | 0;
+    var c = idx % 9;
+    var nr = Math.min(8, Math.max(0, r + dr));
+    var nc = Math.min(8, Math.max(0, c + dc));
+    return focusCell(nr * 9 + nc);
+  }
+
+  document.addEventListener('keydown', function (e) {
+    var k = e.key;
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+    var idx = focusIndex();
+    if (idx === -1) {
+      if (k === 'ArrowRight' || k === 'ArrowDown') {
+        e.preventDefault();
+        focusCell(0);
+      }
+      return;
+    }
+    if (k === 'ArrowLeft') { e.preventDefault(); moveFocus(idx, 0, -1); return; }
+    if (k === 'ArrowRight') { e.preventDefault(); moveFocus(idx, 0, 1); return; }
+    if (k === 'ArrowUp') { e.preventDefault(); moveFocus(idx, -1, 0); return; }
+    if (k === 'ArrowDown') { e.preventDefault(); moveFocus(idx, 1, 0); return; }
+    if (k === 'Tab' || k === 'Enter' || k === 'Escape') return;
+    if (k >= '1' && k <= '9') {
+      e.preventDefault();
+      if (GIVEN[idx]) {
+        setFeedback('rejected', 'That cell holds a given digit and is locked.');
+        return;
+      }
+      cells[idx].value = k;
+      setFeedback('none', '');
+      return;
+    }
+    if (k === 'Backspace' || k === 'Delete' || k === '0') {
+      e.preventDefault();
+      if (GIVEN[idx]) {
+        setFeedback('rejected', 'Given digits cannot be cleared.');
+        return;
+      }
+      cells[idx].value = '';
+      setFeedback('none', '');
+      return;
+    }
+    if (k.length === 1) {
+      e.preventDefault();
+      setFeedback('rejected', 'Rejected input "' + k + '": place 1-9, or clear with Backspace.');
+    }
+  });
+
+  window.sudoku = {
+    puzzle: PUZZLE,
+    cells: cells,
+    given: GIVEN,
+    givenDigit: GIVEN_DIGIT,
+    values: values,
+    doCheck: doCheck,
+    doReset: doReset,
+    doSolve: doSolve,
+    solve: solve,
+    focusIndex: focusIndex,
+    focusCell: focusCell
+  };
+
+  setState('incomplete', 'Given puzzle loaded: ' + GIVEN.filter(function (x) { return x; }).length + ' givens, ' + GIVEN.filter(function (x) { return !x; }).length + ' empty cells. Press Check, Reset or Solve.');
+})();
+</script>
+</body>
+</html>
+`;
+
+fs.writeFileSync(dir + '/sudoku.html', html, 'utf8');
+process.stdout.write('wrote sudoku.html (' + html.length + ' bytes) givens=' + givens + ' puzzle=' + puzzle + '\n');

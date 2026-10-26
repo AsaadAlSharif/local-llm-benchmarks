@@ -1,0 +1,34 @@
+[
+  {
+    "customer_id": 1,
+    "name": "مؤسسة المنارة",
+    "invoice_total_cents": 30000,
+    "paid_cents": 8000,
+    "credit_cents": 1200,
+    "outstanding_cents": 20800
+  },
+  {
+    "customer_id": 2,
+    "name": "Northwind",
+    "invoice_total_cents": 5000,
+    "paid_cents": 0,
+    "credit_cents": 500,
+    "outstanding_cents": 4500
+  },
+  {
+    "customer_id": 4,
+    "name": "Overpaid",
+    "invoice_total_cents": 3000,
+    "paid_cents": 5000,
+    "credit_cents": 0,
+    "outstanding_cents": 2000
+  },
+  {
+    "customer_id": 3,
+    "name": "No invoices",
+    "invoice_total_cents": 0,
+    "paid_cents": 0,
+    "credit_cents": 0,
+    "outstanding_cents": 0
+  }
+]

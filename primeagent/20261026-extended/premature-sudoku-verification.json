@@ -1,0 +1,101 @@
+{
+  "checkedAtUtc": "2026-10-26T15:03:33.309Z",
+  "checks": 20,
+  "passed": 18,
+  "failed": [
+    {
+      "name": "Browser Download matches generated file byte for byte",
+      "passed": false,
+      "error": "ENOENT: no such file or directory, open '<portal>\\benchmarks\\primeagent-extended\\20261026-144451\\downloaded-sudoku.html'"
+    },
+    {
+      "name": "Zero is rejected",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n\n'0' !== ''\n"
+    }
+  ],
+  "details": [
+    {
+      "name": "Browser Download matches generated file byte for byte",
+      "passed": false,
+      "error": "ENOENT: no such file or directory, open '<portal>\\benchmarks\\primeagent-extended\\20261026-144451\\downloaded-sudoku.html'"
+    },
+    {
+      "name": "81 cells match source puzzle",
+      "passed": true
+    },
+    {
+      "name": "Given cells are locked",
+      "passed": true
+    },
+    {
+      "name": "Blank cells accept digits",
+      "passed": true
+    },
+    {
+      "name": "Editable cells can be cleared",
+      "passed": true
+    },
+    {
+      "name": "Letters are rejected",
+      "passed": true
+    },
+    {
+      "name": "Zero is rejected",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n\n'0' !== ''\n"
+    },
+    {
+      "name": "Incomplete puzzle is never reported solved",
+      "passed": true
+    },
+    {
+      "name": "Conflicting entry is rejected by Check",
+      "passed": true
+    },
+    {
+      "name": "Reset restores original puzzle",
+      "passed": true
+    },
+    {
+      "name": "ArrowRight focus movement",
+      "passed": true
+    },
+    {
+      "name": "ArrowLeft focus movement",
+      "passed": true
+    },
+    {
+      "name": "ArrowDown focus movement",
+      "passed": true
+    },
+    {
+      "name": "ArrowUp focus movement",
+      "passed": true
+    },
+    {
+      "name": "Solve produces a valid complete Sudoku preserving givens",
+      "passed": true
+    },
+    {
+      "name": "Check recognizes completed solution",
+      "passed": true
+    },
+    {
+      "name": "Reset remains functional after Solve",
+      "passed": true
+    },
+    {
+      "name": "Phone width has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "No page script errors",
+      "passed": true
+    },
+    {
+      "name": "No external network dependencies",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "updatedOn": "2026-10-26",
+  "authority": "User clarified: also exclude independent boards listing Gemini; keep chat available and defer speed benchmarks.",
+  "excludeOpenClaw": true,
+  "excludeGoogleToolsModelsServicesDatasets": true,
+  "excludeBoardsListingGemini": true,
+  "speedBenchmarksEnabled": false,
+  "targets": {
+    "primeagent-local-quality": {
+      "decision": "allowed",
+      "reason": "User explicitly requested a test through PrimeAgent. Custom local functional checks only, using the existing model and tools; no speed benchmark or excluded leaderboard submission.",
+      "evidence": "User request: try the test from PrimeAgent also and show all benchmarks."
+    },
+    "llm-bench": {
+      "decision": "excluded",
+      "reason": "The comparison board lists Google Gemma models. Three complete uploads preceded the stricter clarification; no further runs or submissions.",
+      "evidence": "https://llm-bench.io/models/gemma-4-e2b"
+    },
+    "evalplus": {
+      "decision": "excluded",
+      "reason": "The official leaderboard data lists Gemini. The incomplete HumanEval run was stopped and was not submitted.",
+      "evidence": "https://raw.githubusercontent.com/evalplus/evalplus.github.io/master/results.json"
+    },
+    "pinchbench": {
+      "decision": "excluded",
+      "reason": "OpenClaw-based.",
+      "evidence": "https://github.com/pinchbench/skill"
+    },
+    "livebench": {
+      "decision": "excluded",
+      "reason": "Includes Google IFEval and compares Gemini.",
+      "evidence": "https://github.com/LiveBench/LiveBench"
+    },
+    "aider-polyglot": {
+      "decision": "held",
+      "reason": "Official environment installs Google's Go toolchain. Strict board eligibility has not been cleared.",
+      "evidence": "https://github.com/Aider-AI/aider/blob/main/benchmark/README.md"
+    },
+    "swe-bench": {
+      "decision": "held",
+      "reason": "Strict Google/Gemini board audit not cleared. Verified and Multilingual also require research eligibility; Lite is a separate route.",
+      "evidence": "https://github.com/SWE-bench/experiments"
+    },
+    "livecodebench": {
+      "decision": "excluded",
+      "reason": "Published submissions include Gemini; the advertised submission repository is also archived.",
+      "evidence": "https://github.com/LiveCodeBench/submissions"
+    },
+    "terminal-bench": {
+      "decision": "held",
+      "reason": "Strict source and board audit not cleared. Current 4.0 requires GPU task sandboxes; community submissions to 2.1 are closed.",
+      "evidence": "https://www.tbench.ai/run"
+    },
+    "strata-community": {
+      "decision": "deferred",
+      "reason": "Native model/runtime benchmark is a possible candidate, but the user deferred speed measurements while chat remains available. Existing earlier submission is unchanged.",
+      "evidence": "https://github.com/Niko1221/Strata/blob/main/docs/COMMUNITY_BENCHMARKS.md"
+    }
+  }
+}

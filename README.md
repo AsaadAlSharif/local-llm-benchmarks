@@ -2,11 +2,24 @@
 
 Measurements and submissions by **Asaad AlSharif**. Model and engine authors retain their original credits; these results do not claim authorship of Qwen or Strata.
 
+<!-- primeagent-extended-start -->
+## Four additional PrimeAgent tasks
+
+- **Python decimal-invoice code repair:** 54/54 independent checks passed.
+- **SQLite multi-table financial report:** 11/11 independent checks passed.
+- **Playable Sudoku: browser, download and phone layout:** 18/21 independent checks passed.
+- **Conflicting Arabic approved/draft evidence:** 1/2 independent checks passed.
+
+[Complete extended evidence, generated code, screenshots and failures](primeagent/20261026-extended). Tests ran through the actual chat UI. Graders were frozen beforehand; self-corrections and failed attempts are retained. These are custom functional tests, not a global ranking.
+
+The [Strata PR](https://github.com/Niko1221/Strata/pull/4166) has **not been rejected**: Intake passed and the scheduled-only sweep job was skipped. Maintainer review is still pending.
+<!-- primeagent-extended-end -->
+
 **[Complete benchmark and test inventory](ALL_BENCHMARKS.md)** includes the official Strata suites, historical/partial attempts, llm-bench.io results and actual PrimeAgent user-interface tests.
 
 ## PrimeAgent tested through its real chat interface
 
-The latest custom functional evaluation used the normal HTTPS browser composer, Coder IQ1_M, deferred MCP discovery, actual tool execution and the artifact Download button. The original blocked document workflow and intermediate retries are retained alongside the corrected result.
+The earlier custom functional evaluation used the normal HTTPS browser composer, Coder IQ1_M, deferred MCP discovery, actual tool execution and the artifact Download button. The original blocked document workflow and intermediate retries are retained alongside the corrected result.
 
 | Check | Result |
 |---|---|

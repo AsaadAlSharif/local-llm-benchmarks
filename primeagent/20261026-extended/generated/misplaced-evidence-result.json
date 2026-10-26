@@ -1,0 +1,14 @@
+{
+  "project": "واحة المعرفة",
+  "supplier": "شركة النور",
+  "currency": "AED",
+  "currentDate": "2026-02-28",
+  "previousDate": "2026-01-31",
+  "currentSource": "02-approved.docx",
+  "previousSource": "01-approved.docx",
+  "excludedSources": ["03-draft.docx"],
+  "currentTotal": 2500.0,
+  "previousTotal": 2000.0,
+  "delta": 500.0,
+  "percentIncrease": 25.0
+}

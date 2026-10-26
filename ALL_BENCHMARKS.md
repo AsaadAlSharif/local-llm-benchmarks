@@ -20,6 +20,10 @@ The Strata protocol is a draft, with nine performance requests and twelve sanity
 
 | Test | Actual result | Evidence |
 |---|---|---|
+| Extended: Python decimal-invoice code repair | **54/54** independent checks passed | [Extended public package](https://github.com/AsaadAlSharif/local-llm-benchmarks/tree/main/primeagent/20261026-extended) |
+| Extended: SQLite multi-table financial report | **11/11** independent checks passed | [Extended public package](https://github.com/AsaadAlSharif/local-llm-benchmarks/tree/main/primeagent/20261026-extended) |
+| Extended: Playable Sudoku: browser, download and phone layout | **18/21** independent checks passed | [Extended public package](https://github.com/AsaadAlSharif/local-llm-benchmarks/tree/main/primeagent/20261026-extended) |
+| Extended: Conflicting Arabic approved/draft evidence | **1/2** independent checks passed | [Extended public package](https://github.com/AsaadAlSharif/local-llm-benchmarks/tree/main/primeagent/20261026-extended) |
 | New CSV coding task through browser | Agent's own **53** tests passed; independent **546/546** checks passed; initial shell denial recovered | [Fresh public package](https://github.com/AsaadAlSharif/local-llm-benchmarks/tree/main/primeagent/20261026-quality) |
 | First Arabic document attempt | **Blocked** by stale MCP read roots; no fabricated JSON; presentation dependency blocked | Same package, original-browser-summary.json |
 | After workspace fix | Document and presentation succeeded; eight math and one filename retries retained | Same package, workspace-fix-browser-summary.json |
@@ -44,3 +48,7 @@ LAN links require access to AIPC. Local-only historical receipts have not all be
 | Original PrimeAgent document/presentation tasks | Blocked by the now-fixed workspace mismatch; preserved separately from post-fix success |
 
 Not run/submitted: PinchBench, LiveBench, Aider Polyglot, SWE-bench, LiveCodeBench and Terminal-Bench. Exclusions/eligibility holds remain in the campaign record. Earlier browser first-response latency of 83.788 seconds is preserved in the Strata historical report; it was an operational observation, not a benchmark distribution. No global rank has been established.
+
+## Strata submission status audit
+
+On October 26, 2026, PR #4166 was open and unmerged with no submitted reviews. The linked Intake run succeeded; its `check` job passed and `sweep` was intentionally skipped because it only runs for scheduled/manual events. No rejection was found. [Audit evidence](primeagent/20261026-extended/strata-pr-audit.json). No upstream workflow change was needed.

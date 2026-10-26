@@ -1,0 +1,363 @@
+{
+  "checkedAtUtc": "2026-10-26T15:13:17.968339+00:00",
+  "checks": 68,
+  "passed": 66,
+  "failed": [
+    {
+      "task": "sudoku",
+      "name": "UI turn completed without browser/observer/turn errors",
+      "passed": false,
+      "error": "UI turn completed without browser/observer/turn errors"
+    },
+    {
+      "task": "evidence",
+      "name": "Load evidence result",
+      "passed": false,
+      "error": "[Errno 2] No such file or directory: 'D:\\\\AI\\\\Agent\\\\Workspace\\\\primeagent-extended-20261026-144451\\\\evidence\\\\result.json'"
+    }
+  ],
+  "details": [
+    {
+      "task": "repair",
+      "name": "UI turn completed without browser/observer/turn errors",
+      "passed": true
+    },
+    {
+      "task": "sql",
+      "name": "UI turn completed without browser/observer/turn errors",
+      "passed": true
+    },
+    {
+      "task": "sudoku",
+      "name": "UI turn completed without browser/observer/turn errors",
+      "passed": false,
+      "error": "UI turn completed without browser/observer/turn errors"
+    },
+    {
+      "task": "evidence",
+      "name": "UI turn completed without browser/observer/turn errors",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Agent actually executed a command",
+      "passed": true
+    },
+    {
+      "task": "sql",
+      "name": "Agent actually executed a command",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 1",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 2",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 3",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 4",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 5",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 6",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 7",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 8",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 9",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 10",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 11",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 12",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 13",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 14",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 15",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 16",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 17",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 18",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 19",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 20",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 21",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 22",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 23",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 24",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 25",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 26",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 27",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 28",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 29",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 30",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 31",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Decimal oracle and nonmutation case 32",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Invalid contract case 1",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Invalid contract case 2",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Invalid contract case 3",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Invalid contract case 4",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Invalid contract case 5",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Invalid contract case 6",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Invalid contract case 7",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Invalid contract case 8",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Invalid contract case 9",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Invalid contract case 10",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Invalid contract case 11",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Invalid contract case 12",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Invalid contract case 13",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Invalid contract case 14",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Invalid contract case 15",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Invalid contract case 16",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Invalid contract case 17",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Invalid contract case 18",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Invalid contract case 19",
+      "passed": true
+    },
+    {
+      "task": "repair",
+      "name": "Invalid contract case 20",
+      "passed": true
+    },
+    {
+      "task": "sql",
+      "name": "Read-only SQL oracle dataset 1",
+      "passed": true
+    },
+    {
+      "task": "sql",
+      "name": "Read-only SQL oracle dataset 2",
+      "passed": true
+    },
+    {
+      "task": "sql",
+      "name": "Read-only SQL oracle dataset 3",
+      "passed": true
+    },
+    {
+      "task": "sql",
+      "name": "Read-only SQL oracle dataset 4",
+      "passed": true
+    },
+    {
+      "task": "sql",
+      "name": "Read-only SQL oracle dataset 5",
+      "passed": true
+    },
+    {
+      "task": "sql",
+      "name": "Read-only SQL oracle dataset 6",
+      "passed": true
+    },
+    {
+      "task": "sql",
+      "name": "Read-only SQL oracle dataset 7",
+      "passed": true
+    },
+    {
+      "task": "sql",
+      "name": "Agent saved actual correct source-query rows",
+      "passed": true
+    },
+    {
+      "task": "sql",
+      "name": "Source database byte identity preserved",
+      "passed": true
+    },
+    {
+      "task": "evidence",
+      "name": "Load evidence result",
+      "passed": false,
+      "error": "[Errno 2] No such file or directory: 'D:\\\\AI\\\\Agent\\\\Workspace\\\\primeagent-extended-20261026-144451\\\\evidence\\\\result.json'"
+    }
+  ]
+}

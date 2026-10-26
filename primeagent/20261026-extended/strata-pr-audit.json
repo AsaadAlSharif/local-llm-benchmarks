@@ -1,0 +1,47 @@
+{
+  "checkedAtUtc": "2026-10-26T14:46:01.5783658Z",
+  "prUrl": "https://github.com/Niko1221/Strata/pull/4166",
+  "prState": "open",
+  "merged": false,
+  "draft": false,
+  "mergeable": true,
+  "mergeableState": "unstable",
+  "headSha": "543814ec63f2edacce788a6791ffcc9b8e5a4cf7",
+  "runUrl": "https://github.com/Niko1221/Strata/actions/runs/40240917297",
+  "runConclusion": "success",
+  "event": "pull_request_target",
+  "jobs": [
+    {
+      "id": 121312293179,
+      "name": "check",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Niko1221/Strata/actions/runs/40240917297/job/121312293179"
+    },
+    {
+      "id": 121312294553,
+      "name": "sweep",
+      "status": "completed",
+      "conclusion": "skipped",
+      "html_url": "https://github.com/Niko1221/Strata/actions/runs/40240917297/job/121312294553"
+    }
+  ],
+  "checks": [
+    {
+      "name": "sweep",
+      "status": "completed",
+      "conclusion": "skipped",
+      "html_url": "https://github.com/Niko1221/Strata/actions/runs/40240917297/job/121312294553"
+    },
+    {
+      "name": "check",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Niko1221/Strata/actions/runs/40240917297/job/121312293179"
+    }
+  ],
+  "reviews": [],
+  "comments": [],
+  "explanation": "sweep runs only for schedule or workflow_dispatch. This event is pull_request_target, so skipped is intentional. Intake check passed. No rejection review or closed PR observed.",
+  "workflowUrl": "https://github.com/Niko1221/Strata/blob/4b9e05a2a806a3fe24f7b2560d98626c37dade35/.github/workflows/intake.yml"
+}

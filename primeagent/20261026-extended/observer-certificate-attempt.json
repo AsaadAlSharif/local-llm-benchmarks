@@ -1,0 +1,13 @@
+{
+  "startedAtUtc": "2026-10-26T14:44:57.169Z",
+  "phase": "original",
+  "evaluation": "PrimeAgent extended custom functional evaluation, not a standardized leaderboard",
+  "operator": "Asaad AlSharif",
+  "application": "PrimeAgent",
+  "interface": "actual HTTPS browser composer",
+  "speedBenchmark": false,
+  "attempts": [],
+  "state": "observer-failed",
+  "error": "apiRequestContext.get: unable to verify the first certificate; if the root CA is installed locally, try running Node.js with --use-system-ca\nCall log:\n\u001b[2m  - → GET https://aipc/strata/v1/models\u001b[22m\n\u001b[2m    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0\u001b[22m\n\u001b[2m    - accept: */*\u001b[22m\n\u001b[2m    - accept-encoding: gzip,deflate,br\u001b[22m\n\n    at <portal>\\benchmarks\\Run-PrimeAgentQuality.cjs:22:53",
+  "finishedAtUtc": "2026-10-26T14:44:57.440Z"
+}

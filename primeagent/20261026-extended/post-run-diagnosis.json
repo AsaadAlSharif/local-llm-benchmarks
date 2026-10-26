@@ -1,0 +1,27 @@
+{
+  "checkedAtUtc": "2026-10-26T15:14:42.311896+00:00",
+  "kind": "supplementary post-run diagnosis, not a replacement benchmark score",
+  "expectedPathExists": false,
+  "actualMisplacedPath": "<agent-workspace>\\primeagent-extended-20261026-144451\\result.json",
+  "schemaMatches": true,
+  "fieldMatches": {
+    "project": true,
+    "supplier": true,
+    "currency": true,
+    "currentDate": true,
+    "previousDate": true,
+    "currentSource": true,
+    "previousSource": true,
+    "excludedSources": true,
+    "currentTotal": true,
+    "previousTotal": true,
+    "delta": true,
+    "percentIncrease": true
+  },
+  "documentReadsCompleted": 3,
+  "mathCallsCompleted": 4,
+  "originalDocumentsUnchanged": true,
+  "artifactObservation": "Native html artifact opens as a playable preview. No Download control was visible in the conversation, environment panel or opened artifact panel. A direct server fetch was not substituted for a user Download action.",
+  "sessionObservation": "Sudoku original turn finished and its own background servers were stopped. Native hasTurnError remained true; exact cause not established. The first observer stopped early while the turn was active. Re-observation used the same session and no new prompt. Full transcript pagination was added.",
+  "frozenGraderUnmodified": true
+}
