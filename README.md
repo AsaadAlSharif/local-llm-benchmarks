@@ -4,7 +4,13 @@ Measurements and submissions by **Asaad AlSharif**. Model and engine authors ret
 
 This repository preserves measured results, official runner outputs and reproduction settings. Each model variant and benchmark suite is a separate result. Interrupted attempts are documented locally and excluded from reported scores. A completed local run, a public upload and accepted leaderboard inclusion are separate states.
 
-## Published results
+## Campaign scope updated October 26, 2026
+
+The benchmark operator clarified that independent boards listing Gemini must also be excluded, in addition to Google tools/models/services/datasets and OpenClaw. Speed benchmarking is deferred to keep normal chat available. No further submissions will be made to excluded boards. The three llm-bench.io uploads below preceded this clarification; they remain historical public measurements outside the current campaign scope. They have not been withdrawn. llm-bench.io lists [Google Gemma](https://llm-bench.io/models/gemma-4-e2b).
+
+The HumanEval+ generation was stopped at 145 of 164 recorded answers after the clarification, because EvalPlus's [official leaderboard data lists Gemini](https://raw.githubusercontent.com/evalplus/evalplus.github.io/master/results.json). It was not scored or submitted, and no partial pass rate is claimed. Benchmark jobs have stopped; the Coder model remains available for ordinary chat.
+
+## Historical uploads before the stricter clarification
 
 | Benchmark | Model | Generation speed | Quality score | Public result |
 |---|---|---:|---:|---|
@@ -26,7 +32,7 @@ The Coder result is a complete four-scenario run. Its site-reported breakdown is
 
 ## Scope
 
-OpenClaw-based suites are excluded. The local runners do not call Google model/services, run Google's MBPP dataset or run Google's IFEval benchmark. Independent boards may list Google competitors. HumanEval+ preparation uses the unchanged EvalPlus OpenAI-compatible adapter and scorer, with Google SDK dependencies omitted; preparation is not a completed quality score.
+OpenClaw-based suites, Google tools/models/services/datasets and independent boards listing Gemini are excluded. A board must pass this scope review before any future run or submission. Speed benchmarks are deferred. Partial HumanEval outputs remain local and are not a complete quality result. No Google SDK was installed for that attempt and no MBPP or IFEval tasks were run.
 
 Every suite retains its own protocol and dataset version. Scores from different suites are not interchangeable. Comparisons between saved Strata profiles must account for image-input and slot settings; they are not automatically a controlled quantization-only experiment.
 
